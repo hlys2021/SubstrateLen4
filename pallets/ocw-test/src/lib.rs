@@ -191,7 +191,7 @@ pub mod pallet {
 			let deadline = sp_io::offchain::timestamp().add(Duration::from_millis(2_000));
 			
 			let request =
-			sp_runtime::offchain::http::Request::get("http://mock.apistub.cn/user/gh_1876277/SampleProject/getprice?who=xuan");
+			sp_runtime::offchain::http::Request::get("https://api.coinmarketcap.com/v1/ticker/bitcoin/");
 			
 			let pending = request.deadline(deadline).send().map_err(|_| http::Error::IoError)?;
 	
